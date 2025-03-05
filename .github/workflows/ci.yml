@@ -12,6 +12,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+
+      - name: Debug - Mostrar arquivos e diretórios
+        run: ls -R
+
       - name: Checkout código
         uses: actions/checkout@v3
 
@@ -26,4 +30,5 @@ jobs:
           pip install -r requirements.txt
 
       - name: Rodar testes
-        run: pytest
+        run: pytest tests\
+
